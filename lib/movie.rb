@@ -9,5 +9,21 @@ class Movie
   def initialize(title, price_code)
     @title, @price_code = title, price_code
   end
+
+  def charge(days_rented)
+    charge = 0
+    # determine amounts for each line
+    case price_code
+    when Movie::REGULAR
+      charge += 2
+      charge += (days_rented - 2) * 1.5 if days_rented > 2
+    when Movie::NEW_RELEASE
+      charge += days_rented * 3
+    when Movie::CHILDRENS
+      charge += 1.5
+      charge += (days_rented - 3) * 1.5 if days_rented > 3
+    end
+    charge
+  end
 end
 

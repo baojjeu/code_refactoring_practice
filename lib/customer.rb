@@ -14,7 +14,6 @@ class Customer
     result = "Rental Record for #{@name}\n"
 
     @rentals.each do |rental|
-
       # 顯示此筆租借資料
       result += "\t" + rental.movie.title + "\t" + rental.charge.to_s + "\n"
     end
