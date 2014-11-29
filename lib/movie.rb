@@ -25,5 +25,13 @@ class Movie
     end
     charge
   end
+
+  def frequent_renter_points(days_rented)
+    if price_code == Movie::NEW_RELEASE && days_rented > 1
+      2
+    else
+      1
+    end
+  end
 end
 
