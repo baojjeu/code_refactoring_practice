@@ -18,6 +18,7 @@ class Rental
       this_amount += 1.5
       this_amount += (days_rented - 3) * 1.5 if days_rented > 3
     end
+    this_amount
   end
 
   def frequent_renter_points

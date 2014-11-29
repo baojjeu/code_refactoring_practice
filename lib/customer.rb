@@ -21,12 +21,23 @@ class Customer
 
       # 顯示此筆租借資料
       result += "\t" + rental.movie.title + "\t" + rental.charge.to_s + "\n"
-      total_amount += rental.charge
     end
 
     # 結尾列印
-    result += "Amount owed is #{total_amount}\n"
+    result += "Amount owed is #{totoal_charge}\n"
     result += "You earned #{frequent_renter_points} frequent renter points"
     result
   end
+
+  private
+    def totoal_charge
+      # sum = 0
+      # @rentals.each do |rental|
+      #   sum += rental.charge
+      # end
+      # sum
+
+      # is equivalent to:
+      @rentals.inject(0) { |sum, rental| sum += rental.charge }
+    end
 end
